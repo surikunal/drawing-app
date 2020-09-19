@@ -46,42 +46,42 @@ function drawCirle(x, y) {
 }
 
 function drawLine(x1, y1, x2, y2) {
-    ctx.beginPath();
-    ctx.moveTo(x1, y1);
-    ctx.lineTo(x2, y2);
-    ctx.strokeStyle = color;
-    ctx.lineWidth = size * 2;
-    ctx.stroke();
+  ctx.beginPath();
+  ctx.moveTo(x1, y1);
+  ctx.lineTo(x2, y2);
+  ctx.strokeStyle = color;
+  ctx.lineWidth = size * 2;
+  ctx.stroke();
 }
 
 increaseBtn.addEventListener("click", () => {
-    size += 3;
+  size += 3;
 
-    if (size > 35) {
-        size = 35;
-    }
-    
-    updateSizeOnScreen();
+  if (size > 35) {
+    size = 35;
+  }
+
+  updateSizeOnScreen();
 });
 
 decreaseBtn.addEventListener("click", () => {
-    size -= 3;
+  size -= 3;
 
-    if (size < 3) {
-        size = 3;
-    }
+  if (size < 3) {
+    size = 3;
+  }
 
-    updateSizeOnScreen();
+  updateSizeOnScreen();
 });
 
 colorEl.addEventListener("change", (e) => {
-    color =  e.target.value;
+  color = e.target.value;
 });
 
 clearEl.addEventListener("click", () => {
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
 });
 
 function updateSizeOnScreen() {
-    sizeEl.innerText = size;
+  sizeEl.innerText = size;
 }
